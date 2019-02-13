@@ -23,6 +23,9 @@ void Shopping::PrintList() {
 // Sort shopping_list_ Elements by Price
 // Apply Selection Sort algorithm
 void Shopping::SortByPrice() {
+  std::sort(shopping_list_.begin(), shpping_list_.end(), 
+    [](const Goods &a, const Goods &b) -> { return a.GetPrice() < b.GetPrice(); });
+  /*
   std::vector<Goods>::iterator p = shopping_list_.begin();
   std::vector<Goods>::iterator min = shopping_list_.end();
   for (std::vector<Goods>::iterator i = shopping_list_.begin();
@@ -39,11 +42,15 @@ void Shopping::SortByPrice() {
     std::iter_swap(i, min);
     min = shopping_list_.end();
   }
+  */
 }
 
 // Sort shopping_list_ Elements by Index
 // Apply Selection Sort algorithm
 void Shopping::SortByIndex() {
+  std::sort(shopping_list_.begin(), shpping_list_.end(),
+    [](const Goods &a, const Goods &b) -> { return a.GetIndex() < b.GetIndex(); });
+  /*
   std::vector<Goods>::iterator p = shopping_list_.begin();
   std::vector<Goods>::iterator min = shopping_list_.end();
   for (std::vector<Goods>::iterator i = shopping_list_.begin();
@@ -60,4 +67,5 @@ void Shopping::SortByIndex() {
     std::iter_swap(i, min);
     min = shopping_list_.end();
   }
+  */
 }
